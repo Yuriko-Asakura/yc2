@@ -63,7 +63,10 @@ namespace ychebpr1
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            charactes.InsertQuery(Convert.ToInt32(t1.Text), Convert.ToInt32(t1.Text), Convert.ToInt32(t1.Text));// Convert.ToInt32(t2.Text), Convert.ToInt32(t3.Text));
+            object sel1 = (t1.SelectedItem as DataRowView).Row[0];
+            object sel2 = (t2.SelectedItem as DataRowView).Row[0];
+            object sel3 = (t3.SelectedItem as DataRowView).Row[0];
+            charactes.InsertQuery(Convert.ToInt32(sel1), Convert.ToInt32(sel2), Convert.ToInt32(sel3));
             ycheb.ItemsSource = charactes.GetData();
         }
     }
